@@ -1,0 +1,21 @@
+div.container {
+    align-self: center;
+}
+div.card-secondary {
+    text-align: center;
+}
+
+div.card-title {
+    color: indianred;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 800;
+    text-decoration-style: solid;
+}
+div.card-text {
+    align-items: center;
+}
+div.form-field {
+    width: 50%;
+    align-items: center;
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel='stylesheet' href='/stylesheets/createPosition.css' />
+    <% include ../partials/head %>
+</head>
+
+<body>
+    <% include ../partials/nav %>
+    <div class="container">
+        <div class="card-secondary">
+            <div class="card-body">
+                <div class="card-header">
+                    Create Position
+                </div>
+                <div class="card-text">
+                    <form class="create-form" action="/positions/create" method="post">
+                        <br>
+                        <div class="form-group row mb-2">
+                            <label class="col-md-2 col-form-label" for="projectname">
+                                Project Name
+                            </label>
+                            <div class="col-md-8">
+                                <input type="text" id="projectname" name="projectname" class="form-control"
+                                    placeholder="Please Enter Project Name" required="">
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-2">
+                            <label class="col-md-2 col-form-label" for="clientname">
+                                Client Name
+                            </label>
+                            <div class="col-md-8">
+                                <input type="text" id="clientname" name="clientname" class="form-control"
+                                    placeholder="Please Enter Client Name" required="">
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-2">
+                            <label class="col-md-2 col-form-label" for="role">
+                                Role
+                            </label>
+                            <div class="col-md-8">
+                                <input type="text" id="role" name="role" class="form-control"
+                                    placeholder="Please Enter Role" required="">
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-2">
+                            <label class="col-md-2 col-form-label" for="jobdesc">
+                                Job Description
+                            </label>
+                            <div class="col-md-8">
+                                <textarea type="" id="jobdesc" cols="30" rows="5" name="jobdesc" class="form-control"
+                                    placeholder="Please Enter Job Description" required=""></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-2">
+                            <label class="col-md-2 col-form-label" for="status">
+                                Status
+                            </label>
+                            <div class="col-md-8">
+                                <div class="row radio-inline">
+                                    <label><input type="radio" name="status" value="true">Opened</label>
+                                    &nbsp;&nbsp;
+                                    <label><input type="radio" name="status" value="false">Closed</label>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-2">
+                            <label class="col-md-2 col-form-label" for="role">
+                                Created By
+                            </label>
+                            <div class="col-md-8">
+                                <input type="text" id="createdby" name="createdby" class="form-control"
+                                    placeholder="Please Enter Created By" readonly>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-sm btn-primary" type="submit">Create Position</button>
+                        <br>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<% include ../partials/footer %>
+
+</html>

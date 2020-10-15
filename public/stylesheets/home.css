@@ -1,0 +1,14 @@
+span.key {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: darkgreen;
+    font-weight: 600;
+    text-decoration: solid;
+}
+
+div.card-title {
+    color: indianred;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 800;
+    text-decoration-style: solid;
+}
