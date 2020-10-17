@@ -7,7 +7,7 @@ function isAuthenticated() {
     return expressJwt({
         secret: process.env.JWT_SECRET,
         algorithms: ["HS256"],
-        getToken: function(req) {
+        getToken: function (req) {
             if (req.headers.authorization && req.headers.authorization.split(' ')[0] === 'Bearer') {
                 return req.headers.authorization.split(' ')[1];
             } else if (req.cookies.auth && req.cookies.auth !== '') {
@@ -15,7 +15,8 @@ function isAuthenticated() {
                 return req.cookies.auth
             }
             return null
-        }
+        },
+
     })
 }
 
@@ -29,19 +30,32 @@ function isUserManager() {
         } else {
             res.status(400).send('Token is not valid')
         }
-        const decodedToken = jwt.decode(token, {json: true})
+        const decodedToken = jwt.decode(token, { json: true })
         console.log('decoded token', decodedToken);
         const role = decodedToken['role'].toLowerCase()
-        if ( role === "manager") {
+        if (role === "manager") {
             console.log("User is manager")
             next()
         } else {
             res.status(401).send('User is not authorized')
         }
     }
-} 
+}
+
+function getUserID(req, res, next) {
+    var token = req.headers['authorization']
+    if (token.startsWith(PREFIX)) {
+        token = token.replace(PREFIX, '')
+    } else {
+        res.status(400).send('Token is not valid')
+    }
+    const decodedToken = jwt.decode(token, { json: true })
+    console.log('decoded token', decodedToken);
+    return decodedToken['_id']
+}
 
 module.exports = {
     isAuthenticated,
     isUserManager,
+    getUserID,
 }

@@ -15,7 +15,7 @@
                     Update Position
                 </div>
                 <div class="card-text">
-                    <form class="update-form" type="application/json" action="/positions/update/<%= position._id %>" method="PUT">
+                    <form method="post" action="/positions/update/<%= position._id %>?_method=PUT">
                         <br>
                         <div class="form-group row mb-2">
                             <label class="col-md-2 col-form-label" for="projectname">
@@ -58,11 +58,11 @@
                         </div>
 
                         <div class="form-group row mb-2">
-                            <label class="col-md-2 col-form-label" for="jobdesc">
+                            <label class="col-md-2 col-form-label" for="jobdescription">
                                 Job Description
                             </label>
                             <div class="col-md-8">
-                                <textarea type="" id="jobdesc" cols="30" rows="5" name="jobdesc" class="form-control"
+                                <textarea type="" id="jobdescription" cols="30" rows="5" name="jobdescription" class="form-control"
                                     placeholder="Please Enter Job Description" required=""> <%= position.jobdescription%></textarea>
                             </div>
                         </div>

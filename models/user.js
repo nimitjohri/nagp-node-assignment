@@ -7,6 +7,9 @@ const saltRounds = process.env.SALT_ROUNDS || 10;
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
+    firstname: String,
+    lastname: String,
+    email: String,
     username: String,
     password: String,
     role: String,

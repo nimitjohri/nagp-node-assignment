@@ -1,6 +1,9 @@
 <nav class="navbar navbar-expand navbar-light bg-dark">
     <a class="navbar-brand" href="/positions/position">Talent Recuriment</a>
 
+    <% if(typeof isUserLoggedIn !== 'undefined') {%>
+    <% if(isUserLoggedIn) {%>
+
     <div class="expand navbar-collapse" id="myNavbar" style="display: inline !important;">
         <ul class="nav justify-content-end">
             <li class="nav-item">
@@ -14,4 +17,7 @@
             </li>
         </ul>
     </div>
+    <% } %>
+    <% } %>
+
 </nav>

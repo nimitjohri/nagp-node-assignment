@@ -19,3 +19,7 @@ div.form-field {
     width: 50%;
     align-items: center;
 }
+
+span.err {
+    color: red;
+}
