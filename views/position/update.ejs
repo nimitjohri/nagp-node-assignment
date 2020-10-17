@@ -14,6 +14,11 @@
                 <div class="card-header">
                     Update Position
                 </div>
+                <div class="row" style="text-align: center; display: inline;">
+                    <% if(typeof errMessage !== 'undefined') {%>
+                        <span class="err"><%= errMessage %> </span>
+                        <% } %>
+                </div>
                 <div class="card-text">
                     <form method="post" action="/positions/update/<%= position._id %>?_method=PUT">
                         <br>
@@ -83,16 +88,6 @@
                                         <label><input type="radio" name="status" value="false" checked>Closed</label>    
                                     <% } %> 
                                 </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-2">
-                            <label class="col-md-2 col-form-label" for="role">
-                                Created By
-                            </label>
-                            <div class="col-md-8">
-                                <input type="text" id="createdby" name="createdby" class="form-control" value="<%= position.createdby%>"
-                                    placeholder="Please Enter Created By" readonly>
                             </div>
                         </div>
 

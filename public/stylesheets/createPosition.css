@@ -22,4 +22,5 @@ div.form-field {
 
 span.err {
     color: red;
+    justify-content: center;
 }
